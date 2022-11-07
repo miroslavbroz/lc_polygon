@@ -7,8 +7,7 @@ The following physics was already implemented:
 - bounding-box test
 - Openmp parallelization
 
-![Screenshot](test_hires/output.I_lambda.49.png)
-![Screenshot](test_hires/output.I2_lambda.01.png)
+![Screenshot](test_2spheres/output.poly5.png)
 
 2DO list:
 
