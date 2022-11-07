@@ -20,15 +20,17 @@ integer :: i
 double precision, dimension(3) :: a, b, c, d
 
 do i = 1, size(polys,1)
-  if (polys(i)%c > 0) then
-    a = polys(i)%s(1)%p(1,:)
-    b = polys(i)%s(1)%p(2,:)
-    c = polys(i)%s(1)%p(3,:)
-
-    d = -vector_product(b-a, c-b)  ! minus; works for sphere.1.* (Blender), 22.1.* (Damit)
-    d = normalize(d)
-    normals(i,:) = d
+  if (polys(i)%c.eq.0) then
+    normals(i,:) = 0.d0
+    cycle
   endif
+  a = polys(i)%s(1)%p(1,:)
+  b = polys(i)%s(1)%p(2,:)
+  c = polys(i)%s(1)%p(3,:)
+
+  d = -vector_product(b-a, c-b)  ! minus; works for sphere.1.* (Blender), 22.1.* (Damit)
+  d = normalize(d)
+  normals(i,:) = d
 enddo
 
 end subroutine normal

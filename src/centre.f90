@@ -19,6 +19,10 @@ double precision, dimension(3) :: s
 
 !$omp parallel do private(i,j,k,n,s) shared(polys,centres)
 do i = 1, size(polys,1)
+  if (polys(i)%c.eq.0) then
+    centres(i,:) = 0.d0
+    cycle
+  endif
   s = 0.d0
   n = 0
   do j = 1, polys(i)%c

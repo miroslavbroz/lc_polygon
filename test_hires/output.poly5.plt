@@ -1,1 +1,0 @@
-../plt/output.poly5.plt

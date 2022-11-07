@@ -65,15 +65,18 @@ double precision, dimension(:,:), pointer, intent(inout) :: normals
 integer :: i
 double precision :: u, v, w
 
+!$omp parallel do private(i,u,v,w) shared(normals,hatu,hatv,hatw)
 do i = 1, size(normals,1)
   u = dot_product(hatu, normals(i,:))
   v = dot_product(hatv, normals(i,:))
   w = dot_product(hatw, normals(i,:))
   normals(i,:) = (/u, v, w/)
 enddo
+!$omp end parallel do
 
 return
 end subroutine uvw_
 
 end module uvw_module
+
 
