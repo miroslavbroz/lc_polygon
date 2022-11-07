@@ -1,0 +1,5 @@
+
+- visibility re-computed only after k steps?
+- clip_in_c sometimes creates a narrow triangle due to round-off!
+- remove narrow polygons
+

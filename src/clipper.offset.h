@@ -1,0 +1,1 @@
+../clipper2/clipper.offset.h
