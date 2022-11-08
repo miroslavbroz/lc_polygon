@@ -34,6 +34,10 @@ else
 endif
 hatv = -vector_product(hatu, hatw)
 
+!write(*,*) 'hatu = ', hatu
+!write(*,*) 'hatv = ', hatv
+!write(*,*) 'hatw = ', hatw
+
 !$omp parallel do private(i,j,k) shared(polys1,polys2,hatu,hatv,hatw)
 do i = 1, size(polys1,1)
 

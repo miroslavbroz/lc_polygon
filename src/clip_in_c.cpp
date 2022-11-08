@@ -9,10 +9,10 @@ using namespace Clipper2Lib;
 
 // cf. polytype.f90!
 
-#define MAXPOLY		32
-#define MAXPOLYS	32
+#define MAXPOLY		64
+#define MAXPOLYS	64
 
-#define DECIMAL_PRECISION	6
+#define DECIMAL_PRECISION	8
 
 typedef struct {
   int c;

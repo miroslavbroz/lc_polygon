@@ -51,7 +51,10 @@
 ! capV           .. volume, m^3
 ! s              .. target->sun unitvector
 ! o              .. target->observer unitvector
-! o_             .. target->observer in line-of-sun
+! s_             .. ditto, 1st transformation
+! o_             .. ditto, 1st transformation
+! s__            .. ditto, 2nd transformation
+! o__            .. ditto, 2nd transformation
 ! d1             .. target-sun distance, m
 ! d2             .. target-observer distance, m
 
@@ -89,7 +92,8 @@ double precision, dimension(:), pointer :: mu_i, mu_e, f, Phi_i
 double precision, dimension(:), pointer :: I_lambda
 
 integer :: i, j, k
-double precision, dimension(3) :: r, o_
+double precision, dimension(3) :: r
+double precision, dimension(3) :: o_, o__, s_, s__
 double precision :: capR, capS, capV
 double precision :: A_hL, A_gL, A_BL
 double precision :: alpha, omega
@@ -227,22 +231,15 @@ write(*,*) 'Phi_lambda_cal = ', Phi_lambda_cal, ' W m^-2 m^-1'
 write(*,*) 'Phi_V_cal = ', Phi_V_cal, ' W m^-2'
 write(*,*) ''
 
-! gnuplotting
-open(unit=10, file='output.gnu', status='unknown')
-write(10,*) 's1 = ', s(1)
-write(10,*) 's2 = ', s(2)
-write(10,*) 's3 = ', s(3)
-write(10,*) 'o1 = ', o(1)
-write(10,*) 'o2 = ', o(2)
-write(10,*) 'o3 = ', o(3)
-close(10)
-
 do k = 1, nsteps
   call cpu_time(t1)
 
   ! orbital motion (simplified)
   r = r_ + v_*dt*k
 
+  do j = 1, size(nodes1,1)
+    nodes(j,:) = nodes1(j,:)
+  enddo
   do i = 1, size(nodes2,1)
     nodes(i+size(nodes1,1),:) = nodes2(i,:) + r
   enddo
@@ -253,10 +250,14 @@ do k = 1, nsteps
   ! non-illuminated || non-visible won't be computed
   call non(mu_i, mu_e, polys1)
 
-  ! 1st projection
+  ! 1st transformation
   call uvw(s, polys1, polys2)
+  call uvw_(nodes)
   call uvw_(normals)
   call uvw_(centres)
+
+  o_ = (/dot_product(hatu,o), dot_product(hatv,o), dot_product(hatw,o)/)
+  s_ = (/dot_product(hatu,s), dot_product(hatv,s), dot_product(hatw,s)/)
 
   ! shadowing
   call clip(polys2, polys3)
@@ -264,11 +265,14 @@ do k = 1, nsteps
   ! back-projecion
   call to_three(normals, centres, polys3)
 
-  ! 2nd projection
-  o_ = (/dot_product(hatu,o), dot_product(hatv,o), dot_product(hatw,o)/)
+  ! 2nd transformation
   call uvw(o_, polys3, polys4)
+  call uvw_(nodes)
   call uvw_(normals)
   call uvw_(centres)
+
+  o__ = (/dot_product(hatu,o_), dot_product(hatv,o_), dot_product(hatw,o_)/)
+  s__ = (/dot_product(hatu,s_), dot_product(hatv,s_), dot_product(hatw,s_)/)
 
   ! shadowing
   call clip(polys4, polys5)
@@ -277,7 +281,7 @@ do k = 1, nsteps
   call to_three(normals, centres, polys5)
 
   ! geometry
-  capS = surface(polys5, normals, surf)
+  capS = surface(polys5, surf)
 
   ! integration
   include 'integrate_over_S.inc'
@@ -316,6 +320,30 @@ do k = 1, nsteps
       call write1("output.Phi_i." // trim(str), Phi_i)
       call write1("output.surf." // trim(str), surf)
       call write1("output.I_lambda." // trim(str), I_lambda)
+    endif
+
+    ! gnuplotting
+    if (k.eq.1) then
+      open(unit=10, file='output.gnu', status='unknown')
+      write(10,*) 's1 = ', s(1)
+      write(10,*) 's2 = ', s(2)
+      write(10,*) 's3 = ', s(3)
+      write(10,*) 'o1 = ', o(1)
+      write(10,*) 'o2 = ', o(2)
+      write(10,*) 'o3 = ', o(3)
+      write(10,*) 's1_ = ', s_(1)
+      write(10,*) 's2_ = ', s_(2)
+      write(10,*) 's3_ = ', s_(3)
+      write(10,*) 'o1_ = ', o_(1)
+      write(10,*) 'o2_ = ', o_(2)
+      write(10,*) 'o3_ = ', o_(3)
+      write(10,*) 's1__ = ', s__(1)
+      write(10,*) 's2__ = ', s__(2)
+      write(10,*) 's3__ = ', s__(3)
+      write(10,*) 'o1__ = ', o__(1)
+      write(10,*) 'o2__ = ', o__(2)
+      write(10,*) 'o3__ = ', o__(3)
+      close(10)
     endif
   endif
 

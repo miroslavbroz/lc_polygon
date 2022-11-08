@@ -23,7 +23,8 @@ module polytype_module
 
 use iso_c_binding
 
-integer, parameter :: MAXPOLY = 32, MAXPOLYS = 32
+integer, parameter :: MAXPOLY  = 64
+integer, parameter :: MAXPOLYS = 64
 
 type, bind(c) :: polytype
   integer(c_int) :: c = 0
