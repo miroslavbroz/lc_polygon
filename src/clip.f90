@@ -42,8 +42,8 @@ do i = 1, size(polys2,1)
   do j = 1, size(polys2,1)
     if (j.ne.i) then
 
+      if (poly_i%c.eq.0) exit
       if (polys2(j)%c.eq.0) cycle
-      if (poly_i%c.eq.0) cycle
       if ((boxes(j,2).lt.boxes(i,1)).or.(boxes(j,1).gt.boxes(i,2))) cycle
       if ((boxes(j,4).lt.boxes(i,3)).or.(boxes(j,3).gt.boxes(i,4))) cycle
       if (boxes(j,6).lt.boxes(i,6)) cycle

@@ -16,7 +16,7 @@ set palette gray
 
 sp \
   "<./poly.awk output.poly5.50" u 4:5:6 w lp not,\
-  "<./poly.awk output.poly5.50 | awk '($1==45) || (NF==0)'" u 4:5:6 w l lw 3 lc 'black',\
+  "<./poly.awk output.poly5.50 | awk '($1==7) || (NF==0)'" u 4:5:6 w l lw 3 lc 'black',\
 
 pa -1
 

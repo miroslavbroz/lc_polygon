@@ -281,7 +281,7 @@ do k = 1, nsteps
   call to_three(normals, centres, polys5)
 
   ! geometry
-  capS = surface(polys5, surf)
+  capS = surface(polys5, normals, surf)
 
   ! integration
   include 'integrate_over_S.inc'

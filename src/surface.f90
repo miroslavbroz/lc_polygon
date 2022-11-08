@@ -10,24 +10,26 @@ module surface_module
 
 contains
 
-double precision function surface(polys, surf)
+double precision function surface(polys, normals, surf)
 
 use polytype_module
 use vector_product_module
 
 implicit none
 type(polystype), dimension(:), pointer, intent(in) :: polys
+double precision, dimension(:,:), pointer, intent(in) :: normals
 double precision, dimension(:), pointer, intent(out) :: surf
 
 integer :: i, j, k, l
-double precision :: S
+double precision :: S, tmp2, tmp3
 double precision, dimension(3) :: a, b, c, tmp
 
 S = 0.d0
 surf = 0.d0
 
-!$omp parallel do reduction(+:S) private(i,j,k,tmp,a,b,c) shared(polys,surf)
+!$omp parallel do reduction(+:S) private(i,j,k,tmp,tmp2,tmp3,a,b,c) shared(polys,surf)
 do i = 1, size(polys,1)
+
   surf(i) = 0.d0
   do j = 1, polys(i)%c
     tmp = 0.d0
@@ -38,7 +40,11 @@ do i = 1, size(polys,1)
       c = polys(i)%s(j)%p(k+1,:)
       tmp = tmp + vector_product(b-a,c-a)
     enddo
-    surf(i) = surf(i) + 0.5d0*sqrt(dot_product(tmp,tmp))
+
+    tmp2 = 0.5d0*sqrt(dot_product(tmp,tmp))
+    tmp3 = dot_product(tmp,normals(i,:))
+    surf(i) = surf(i) + sign(tmp2,tmp3)
+
   enddo
   S = S + surf(i)
 enddo
