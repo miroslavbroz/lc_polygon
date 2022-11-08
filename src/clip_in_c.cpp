@@ -12,7 +12,7 @@ using namespace Clipper2Lib;
 #define MAXPOLY		32
 #define MAXPOLYS	32
 
-#define DECIMAL_PRECISION	4
+#define DECIMAL_PRECISION	6
 
 typedef struct {
   int c;

@@ -32,30 +32,30 @@ double precision, dimension(:,:), pointer, save :: boxes
 
 call boundingbox(polys2, boxes)
 
-!!$omp parallel do private(i,j,poly_i,poly_j,poly_k) shared(polys2,polys3,boxes)
+polys3(:)%c = 0
+
+!$omp parallel do private(i,j,poly_i,poly_j,poly_k) shared(polys2,polys3,boxes)
 do i = 1, size(polys2,1)
+  if (polys2(i)%c.eq.0) cycle
   poly_i = polys2(i)
+
   do j = 1, size(polys2,1)
     if (j.ne.i) then
 
+      if (polys2(j)%c.eq.0) cycle
+      if (poly_i%c.eq.0) cycle
       if ((boxes(j,2).lt.boxes(i,1)).or.(boxes(j,1).gt.boxes(i,2))) cycle
       if ((boxes(j,4).lt.boxes(i,3)).or.(boxes(j,3).gt.boxes(i,4))) cycle
       if (boxes(j,6).lt.boxes(i,6)) cycle
 
-      poly_j = polys2(j)
+      call clip_in_c(poly_i, polys2(j), poly_k)
 
-!      write(*,*) 'i = ', i, ' j = ', j
-
-      call clip_in_c(poly_i, poly_j, poly_k)
-
-!      write(*,*) 'AFTER CLIP'
-
-      poly_i = poly_k
+      include 'c1.inc'
     endif
   enddo
   polys3(i) = poly_i
 enddo
-!!$omp end parallel do
+!$omp end parallel do
 
 end subroutine clip
 

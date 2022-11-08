@@ -1,0 +1,386 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 80.23     20.45    20.45      200   102.25   103.35  __clip_module_MOD_clip
+  6.90     22.21     1.76                             clip_in_c
+  3.06     22.99     0.78                             Clipper2Lib::ClipperBase::InsertLocalMinimaIntoAEL(long)
+  1.18     23.29     0.30                             Clipper2Lib::ClipperD::~ClipperD()
+  1.04     23.56     0.27                             void std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >::_M_realloc_insert<Clipper2Lib::Point<double> >(__gnu_cxx::__normal_iterator<Clipper2Lib::Point<double>*, std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > >, Clipper2Lib::Point<double>&&)
+  0.92     23.79     0.24                             void std::__adjust_heap<__gnu_cxx::__normal_iterator<long*, std::vector<long, std::allocator<long> > >, long, long, __gnu_cxx::__ops::_Iter_comp_iter<std::less<long> > >(__gnu_cxx::__normal_iterator<long*, std::vector<long, std::allocator<long> > >, long, long, long, __gnu_cxx::__ops::_Iter_comp_iter<std::less<long> >) [clone .constprop.0]
+  0.86     24.01     0.22                             std::vector<std::vector<Clipper2Lib::Point<long>, std::allocator<Clipper2Lib::Point<long> > >, std::allocator<std::vector<Clipper2Lib::Point<long>, std::allocator<Clipper2Lib::Point<long> > > > > Clipper2Lib::ScalePaths<long, double>(std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > > const&, double)
+  0.86     24.23     0.22      200     1.10     1.10  __boundingbox_module_MOD_boundingbox
+  0.57     24.38     0.15                             Clipper2Lib::ClipperBase::PopScanline(long&)
+  0.55     24.52     0.14                             Clipper2Lib::ClipperBase::CleanCollinear(Clipper2Lib::OutRec*)
+  0.35     24.61     0.09                             Clipper2Lib::ClipperBase::AddLocMin(Clipper2Lib::Vertex&, Clipper2Lib::PathType, bool)
+  0.29     24.68     0.08                             Clipper2Lib::ClipperBase::AddLocalMinPoly(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&, bool)
+  0.27     24.75     0.07                             Clipper2Lib::ClipperBase::~ClipperBase()
+  0.27     24.82     0.07                             Clipper2Lib::ClipperBase::CleanUp()
+  0.24     24.88     0.06      101     0.59     0.59  __to_poly_module_MOD_to_poly
+  0.24     24.94     0.06                             Clipper2Lib::ClipperBase::AddLocalMaxPoly(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&)
+  0.24     25.00     0.06                             Clipper2Lib::ClipperBase::AddOutPt(Clipper2Lib::Active const&, Clipper2Lib::Point<long> const&) [clone .constprop.0]
+  0.22     25.06     0.06                             std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::reserve(unsigned long)
+  0.20     25.11     0.05                             void std::__insertion_sort<__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter> >(__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter>) [clone .constprop.0]
+  0.16     25.15     0.04      200     0.20     0.20  __to_three_module_MOD_to_three
+  0.16     25.19     0.04      200     0.20     0.20  __uvw_module_MOD_uvw
+  0.16     25.23     0.04                             void std::vector<Clipper2Lib::OutRec*, std::allocator<Clipper2Lib::OutRec*> >::_M_realloc_insert<Clipper2Lib::OutRec* const&>(__gnu_cxx::__normal_iterator<Clipper2Lib::OutRec**, std::vector<Clipper2Lib::OutRec*, std::allocator<Clipper2Lib::OutRec*> > >, Clipper2Lib::OutRec* const&)
+  0.16     25.27     0.04                             void std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::emplace_back<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > >(std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >&&)
+  0.16     25.31     0.04                             void std::__introsort_loop<__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter> >(__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter>)
+  0.12     25.34     0.03                             Clipper2Lib::BuildPathD(Clipper2Lib::OutPt*, bool, bool, std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >&, double) [clone .constprop.0]
+  0.08     25.36     0.02      400     0.05     0.05  __uvw_module_MOD_uvw_
+  0.08     25.38     0.02      101     0.20     0.20  __centre_module_MOD_centre
+  0.08     25.40     0.02      101     0.20     0.20  __normal_module_MOD_normal
+  0.08     25.42     0.02                             Clipper2Lib::ClipperBase::DoHorizontal(Clipper2Lib::Active&)
+  0.08     25.44     0.02                             std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::_M_default_append(unsigned long)
+  0.04     25.45     0.01      100     0.10     0.10  __shadowing_module_MOD_non
+  0.04     25.46     0.01       15     0.67     0.67  __write_poly_module_MOD_write_poly
+  0.04     25.47     0.01                             Clipper2Lib::ClipperBase::ProcessJoin(Clipper2Lib::Joiner*)
+  0.04     25.48     0.01                             Clipper2Lib::ClipperBase::IntersectEdges(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&)
+  0.04     25.49     0.01                             Clipper2Lib::ClipperBase::AddTrialHorzJoin(Clipper2Lib::OutPt*)
+  0.02     25.49     0.01                             void std::__insertion_sort<__gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(Clipper2Lib::IntersectNode const&, Clipper2Lib::IntersectNode const&)> >(__gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(Clipper2Lib::IntersectNode const&, Clipper2Lib::IntersectNode const&)>) [clone .constprop.0]
+  0.00     25.49     0.00   774003     0.00     0.00  __vector_product_module_MOD_vector_product
+  0.00     25.49     0.00   542170     0.00     0.00  __normalize_module_MOD_normalize
+  0.00     25.49     0.00   231635     0.00     0.00  __surface_module_MOD_s1
+  0.00     25.49     0.00   231612     0.00     0.00  __lambert_module_MOD_f_lambert
+  0.00     25.49     0.00      100     0.00     0.00  __surface_module_MOD_surface
+  0.00     25.49     0.00       15     0.00     0.00  __write1_module_MOD_write1
+  0.00     25.49     0.00        9     0.00     0.00  __write_node_module_MOD_write_node
+  0.00     25.49     0.00        3     0.00     0.00  __write_face_module_MOD_write_face
+  0.00     25.49     0.00        2     0.00     0.00  __planck_module_MOD_planck
+  0.00     25.49     0.00        2     0.00     0.00  __read_face_module_MOD_read_face
+  0.00     25.49     0.00        2     0.00     0.00  __read_node_module_MOD_read_node
+  0.00     25.49     0.00        2     0.00     0.00  __shadowing_module_MOD_mu
+  0.00     25.49     0.00        1     0.00     0.00  __hapke_module_MOD_init_hapke
+  0.00     25.49     0.00        1     0.00     0.00  __read_input_module_MOD_read_input
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.04% of 25.49 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     82.0    0.00   20.89                 MAIN__ [1]
+               20.45    0.22     200/200         __clip_module_MOD_clip [2]
+                0.06    0.00     101/101         __to_poly_module_MOD_to_poly [16]
+                0.04    0.00     200/200         __uvw_module_MOD_uvw [22]
+                0.04    0.00     200/200         __to_three_module_MOD_to_three [21]
+                0.02    0.00     400/400         __uvw_module_MOD_uvw_ [27]
+                0.02    0.00     101/101         __normal_module_MOD_normal [29]
+                0.02    0.00     101/101         __centre_module_MOD_centre [28]
+                0.01    0.00     100/100         __shadowing_module_MOD_non [32]
+                0.01    0.00      15/15          __write_poly_module_MOD_write_poly [33]
+                0.00    0.00  231612/231612      __lambert_module_MOD_f_lambert [48]
+                0.00    0.00     100/100         __surface_module_MOD_surface [49]
+                0.00    0.00      15/15          __write1_module_MOD_write1 [50]
+                0.00    0.00       9/9           __write_node_module_MOD_write_node [51]
+                0.00    0.00       3/3           __write_face_module_MOD_write_face [52]
+                0.00    0.00       2/2           __read_node_module_MOD_read_node [55]
+                0.00    0.00       2/2           __read_face_module_MOD_read_face [54]
+                0.00    0.00       2/2           __shadowing_module_MOD_mu [56]
+                0.00    0.00       2/2           __planck_module_MOD_planck [53]
+                0.00    0.00       1/1           __read_input_module_MOD_read_input [58]
+                0.00    0.00       1/1           __hapke_module_MOD_init_hapke [57]
+-----------------------------------------------
+               20.45    0.22     200/200         MAIN__ [1]
+[2]     81.1   20.45    0.22     200         __clip_module_MOD_clip [2]
+                0.22    0.00     200/200         __boundingbox_module_MOD_boundingbox [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]      6.9    1.76    0.00                 clip_in_c [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]      3.1    0.78    0.00                 Clipper2Lib::ClipperBase::InsertLocalMinimaIntoAEL(long) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]      1.2    0.30    0.00                 Clipper2Lib::ClipperD::~ClipperD() [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      1.0    0.27    0.00                 void std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >::_M_realloc_insert<Clipper2Lib::Point<double> >(__gnu_cxx::__normal_iterator<Clipper2Lib::Point<double>*, std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > >, Clipper2Lib::Point<double>&&) [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      0.9    0.24    0.00                 void std::__adjust_heap<__gnu_cxx::__normal_iterator<long*, std::vector<long, std::allocator<long> > >, long, long, __gnu_cxx::__ops::_Iter_comp_iter<std::less<long> > >(__gnu_cxx::__normal_iterator<long*, std::vector<long, std::allocator<long> > >, long, long, long, __gnu_cxx::__ops::_Iter_comp_iter<std::less<long> >) [clone .constprop.0] [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[8]      0.9    0.22    0.00                 std::vector<std::vector<Clipper2Lib::Point<long>, std::allocator<Clipper2Lib::Point<long> > >, std::allocator<std::vector<Clipper2Lib::Point<long>, std::allocator<Clipper2Lib::Point<long> > > > > Clipper2Lib::ScalePaths<long, double>(std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > > const&, double) [8]
+-----------------------------------------------
+                0.22    0.00     200/200         __clip_module_MOD_clip [2]
+[9]      0.9    0.22    0.00     200         __boundingbox_module_MOD_boundingbox [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     0.6    0.15    0.00                 Clipper2Lib::ClipperBase::PopScanline(long&) [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[11]     0.5    0.14    0.00                 Clipper2Lib::ClipperBase::CleanCollinear(Clipper2Lib::OutRec*) [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     0.4    0.09    0.00                 Clipper2Lib::ClipperBase::AddLocMin(Clipper2Lib::Vertex&, Clipper2Lib::PathType, bool) [12]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     0.3    0.08    0.00                 Clipper2Lib::ClipperBase::AddLocalMinPoly(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&, bool) [13]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     0.3    0.07    0.00                 Clipper2Lib::ClipperBase::~ClipperBase() [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.3    0.07    0.00                 Clipper2Lib::ClipperBase::CleanUp() [15]
+-----------------------------------------------
+                0.06    0.00     101/101         MAIN__ [1]
+[16]     0.2    0.06    0.00     101         __to_poly_module_MOD_to_poly [16]
+-----------------------------------------------
+                                                 <spontaneous>
+[17]     0.2    0.06    0.00                 Clipper2Lib::ClipperBase::AddLocalMaxPoly(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&) [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     0.2    0.06    0.00                 Clipper2Lib::ClipperBase::AddOutPt(Clipper2Lib::Active const&, Clipper2Lib::Point<long> const&) [clone .constprop.0] [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.2    0.06    0.00                 std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::reserve(unsigned long) [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[20]     0.2    0.05    0.00                 void std::__insertion_sort<__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter> >(__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter>) [clone .constprop.0] [20]
+-----------------------------------------------
+                0.04    0.00     200/200         MAIN__ [1]
+[21]     0.2    0.04    0.00     200         __to_three_module_MOD_to_three [21]
+-----------------------------------------------
+                0.04    0.00     200/200         MAIN__ [1]
+[22]     0.2    0.04    0.00     200         __uvw_module_MOD_uvw [22]
+                0.00    0.00     200/774003      __vector_product_module_MOD_vector_product [45]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.2    0.04    0.00                 void std::vector<Clipper2Lib::OutRec*, std::allocator<Clipper2Lib::OutRec*> >::_M_realloc_insert<Clipper2Lib::OutRec* const&>(__gnu_cxx::__normal_iterator<Clipper2Lib::OutRec**, std::vector<Clipper2Lib::OutRec*, std::allocator<Clipper2Lib::OutRec*> > >, Clipper2Lib::OutRec* const&) [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.2    0.04    0.00                 void std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::emplace_back<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > >(std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >&&) [24]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     0.2    0.04    0.00                 void std::__introsort_loop<__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter> >(__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter>) [25]
+-----------------------------------------------
+                                                 <spontaneous>
+[26]     0.1    0.03    0.00                 Clipper2Lib::BuildPathD(Clipper2Lib::OutPt*, bool, bool, std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >&, double) [clone .constprop.0] [26]
+-----------------------------------------------
+                0.02    0.00     400/400         MAIN__ [1]
+[27]     0.1    0.02    0.00     400         __uvw_module_MOD_uvw_ [27]
+-----------------------------------------------
+                0.02    0.00     101/101         MAIN__ [1]
+[28]     0.1    0.02    0.00     101         __centre_module_MOD_centre [28]
+-----------------------------------------------
+                0.02    0.00     101/101         MAIN__ [1]
+[29]     0.1    0.02    0.00     101         __normal_module_MOD_normal [29]
+                0.00    0.00  542168/774003      __vector_product_module_MOD_vector_product [45]
+                0.00    0.00  542168/542170      __normalize_module_MOD_normalize [46]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.1    0.02    0.00                 Clipper2Lib::ClipperBase::DoHorizontal(Clipper2Lib::Active&) [30]
+-----------------------------------------------
+                                                 <spontaneous>
+[31]     0.1    0.02    0.00                 std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::_M_default_append(unsigned long) [31]
+-----------------------------------------------
+                0.01    0.00     100/100         MAIN__ [1]
+[32]     0.0    0.01    0.00     100         __shadowing_module_MOD_non [32]
+-----------------------------------------------
+                0.01    0.00      15/15          MAIN__ [1]
+[33]     0.0    0.01    0.00      15         __write_poly_module_MOD_write_poly [33]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.0    0.01    0.00                 Clipper2Lib::ClipperBase::ProcessJoin(Clipper2Lib::Joiner*) [34]
+-----------------------------------------------
+                                                 <spontaneous>
+[35]     0.0    0.01    0.00                 Clipper2Lib::ClipperBase::IntersectEdges(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&) [35]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.0    0.01    0.00                 Clipper2Lib::ClipperBase::AddTrialHorzJoin(Clipper2Lib::OutPt*) [36]
+-----------------------------------------------
+                                                 <spontaneous>
+[37]     0.0    0.01    0.00                 void std::__insertion_sort<__gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(Clipper2Lib::IntersectNode const&, Clipper2Lib::IntersectNode const&)> >(__gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(Clipper2Lib::IntersectNode const&, Clipper2Lib::IntersectNode const&)>) [clone .constprop.0] [37]
+-----------------------------------------------
+                0.00    0.00     200/774003      __uvw_module_MOD_uvw [22]
+                0.00    0.00  231635/774003      __surface_module_MOD_s1 [47]
+                0.00    0.00  542168/774003      __normal_module_MOD_normal [29]
+[45]     0.0    0.00    0.00  774003         __vector_product_module_MOD_vector_product [45]
+-----------------------------------------------
+                0.00    0.00       2/542170      __read_input_module_MOD_read_input [58]
+                0.00    0.00  542168/542170      __normal_module_MOD_normal [29]
+[46]     0.0    0.00    0.00  542170         __normalize_module_MOD_normalize [46]
+-----------------------------------------------
+                0.00    0.00  231635/231635      __surface_module_MOD_surface [49]
+[47]     0.0    0.00    0.00  231635         __surface_module_MOD_s1 [47]
+                0.00    0.00  231635/774003      __vector_product_module_MOD_vector_product [45]
+-----------------------------------------------
+                0.00    0.00  231612/231612      MAIN__ [1]
+[48]     0.0    0.00    0.00  231612         __lambert_module_MOD_f_lambert [48]
+-----------------------------------------------
+                0.00    0.00     100/100         MAIN__ [1]
+[49]     0.0    0.00    0.00     100         __surface_module_MOD_surface [49]
+                0.00    0.00  231635/231635      __surface_module_MOD_s1 [47]
+-----------------------------------------------
+                0.00    0.00      15/15          MAIN__ [1]
+[50]     0.0    0.00    0.00      15         __write1_module_MOD_write1 [50]
+-----------------------------------------------
+                0.00    0.00       9/9           MAIN__ [1]
+[51]     0.0    0.00    0.00       9         __write_node_module_MOD_write_node [51]
+-----------------------------------------------
+                0.00    0.00       3/3           MAIN__ [1]
+[52]     0.0    0.00    0.00       3         __write_face_module_MOD_write_face [52]
+-----------------------------------------------
+                0.00    0.00       2/2           MAIN__ [1]
+[53]     0.0    0.00    0.00       2         __planck_module_MOD_planck [53]
+-----------------------------------------------
+                0.00    0.00       2/2           MAIN__ [1]
+[54]     0.0    0.00    0.00       2         __read_face_module_MOD_read_face [54]
+-----------------------------------------------
+                0.00    0.00       2/2           MAIN__ [1]
+[55]     0.0    0.00    0.00       2         __read_node_module_MOD_read_node [55]
+-----------------------------------------------
+                0.00    0.00       2/2           MAIN__ [1]
+[56]     0.0    0.00    0.00       2         __shadowing_module_MOD_mu [56]
+-----------------------------------------------
+                0.00    0.00       1/1           MAIN__ [1]
+[57]     0.0    0.00    0.00       1         __hapke_module_MOD_init_hapke [57]
+-----------------------------------------------
+                0.00    0.00       1/1           MAIN__ [1]
+[58]     0.0    0.00    0.00       1         __read_input_module_MOD_read_input [58]
+                0.00    0.00       2/542170      __normalize_module_MOD_normalize [46]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [26] Clipper2Lib::BuildPathD(Clipper2Lib::OutPt*, bool, bool, std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >&, double) [clone .constprop.0] [23] void std::vector<Clipper2Lib::OutRec*, std::allocator<Clipper2Lib::OutRec*> >::_M_realloc_insert<Clipper2Lib::OutRec* const&>(__gnu_cxx::__normal_iterator<Clipper2Lib::OutRec**, std::vector<Clipper2Lib::OutRec*, std::allocator<Clipper2Lib::OutRec*> > >, Clipper2Lib::OutRec* const&) [58] __read_input_module_MOD_read_input
+   [8] std::vector<std::vector<Clipper2Lib::Point<long>, std::allocator<Clipper2Lib::Point<long> > >, std::allocator<std::vector<Clipper2Lib::Point<long>, std::allocator<Clipper2Lib::Point<long> > > > > Clipper2Lib::ScalePaths<long, double>(std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > > const&, double) [24] void std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::emplace_back<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > >(std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >&&) [55] __read_node_module_MOD_read_node
+  [10] Clipper2Lib::ClipperBase::PopScanline(long&) [31] std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::_M_default_append(unsigned long) [56] __shadowing_module_MOD_mu
+  [34] Clipper2Lib::ClipperBase::ProcessJoin(Clipper2Lib::Joiner*) [19] std::vector<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >, std::allocator<std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > > >::reserve(unsigned long) [32] __shadowing_module_MOD_non
+  [30] Clipper2Lib::ClipperBase::DoHorizontal(Clipper2Lib::Active&) [7] void std::__adjust_heap<__gnu_cxx::__normal_iterator<long*, std::vector<long, std::allocator<long> > >, long, long, __gnu_cxx::__ops::_Iter_comp_iter<std::less<long> > >(__gnu_cxx::__normal_iterator<long*, std::vector<long, std::allocator<long> > >, long, long, long, __gnu_cxx::__ops::_Iter_comp_iter<std::less<long> >) [clone .constprop.0] [47] __surface_module_MOD_s1
+  [11] Clipper2Lib::ClipperBase::CleanCollinear(Clipper2Lib::OutRec*) [37] void std::__insertion_sort<__gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(Clipper2Lib::IntersectNode const&, Clipper2Lib::IntersectNode const&)> >(__gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::IntersectNode*, std::vector<Clipper2Lib::IntersectNode, std::allocator<Clipper2Lib::IntersectNode> > >, __gnu_cxx::__ops::_Iter_comp_iter<bool (*)(Clipper2Lib::IntersectNode const&, Clipper2Lib::IntersectNode const&)>) [clone .constprop.0] [49] __surface_module_MOD_surface
+  [35] Clipper2Lib::ClipperBase::IntersectEdges(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&) [20] void std::__insertion_sort<__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter> >(__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter>) [clone .constprop.0] [16] __to_poly_module_MOD_to_poly
+  [17] Clipper2Lib::ClipperBase::AddLocalMaxPoly(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&) [25] void std::__introsort_loop<__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter> >(__gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, __gnu_cxx::__normal_iterator<Clipper2Lib::LocalMinima**, std::vector<Clipper2Lib::LocalMinima*, std::allocator<Clipper2Lib::LocalMinima*> > >, long, __gnu_cxx::__ops::_Iter_comp_iter<Clipper2Lib::LocMinSorter>) [21] __to_three_module_MOD_to_three
+  [13] Clipper2Lib::ClipperBase::AddLocalMinPoly(Clipper2Lib::Active&, Clipper2Lib::Active&, Clipper2Lib::Point<long> const&, bool) [9] __boundingbox_module_MOD_boundingbox [22] __uvw_module_MOD_uvw
+  [36] Clipper2Lib::ClipperBase::AddTrialHorzJoin(Clipper2Lib::OutPt*) [28] __centre_module_MOD_centre [27] __uvw_module_MOD_uvw_
+   [4] Clipper2Lib::ClipperBase::InsertLocalMinimaIntoAEL(long) [2] __clip_module_MOD_clip [45] __vector_product_module_MOD_vector_product
+  [15] Clipper2Lib::ClipperBase::CleanUp() [57] __hapke_module_MOD_init_hapke [50] __write1_module_MOD_write1
+  [18] Clipper2Lib::ClipperBase::AddOutPt(Clipper2Lib::Active const&, Clipper2Lib::Point<long> const&) [clone .constprop.0] [48] __lambert_module_MOD_f_lambert [52] __write_face_module_MOD_write_face
+  [12] Clipper2Lib::ClipperBase::AddLocMin(Clipper2Lib::Vertex&, Clipper2Lib::PathType, bool) [29] __normal_module_MOD_normal [51] __write_node_module_MOD_write_node
+  [14] Clipper2Lib::ClipperBase::~ClipperBase() [46] __normalize_module_MOD_normalize [33] __write_poly_module_MOD_write_poly
+   [5] Clipper2Lib::ClipperD::~ClipperD() [53] __planck_module_MOD_planck [3] clip_in_c
+   [6] void std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > >::_M_realloc_insert<Clipper2Lib::Point<double> >(__gnu_cxx::__normal_iterator<Clipper2Lib::Point<double>*, std::vector<Clipper2Lib::Point<double>, std::allocator<Clipper2Lib::Point<double> > > >, Clipper2Lib::Point<double>&&) [54] __read_face_module_MOD_read_face

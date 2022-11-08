@@ -286,11 +286,11 @@ do k = 1, nsteps
   Phi_V = Delta_eff*omega*tot
   V0 = 0.d0 - 2.5d0*log10(Phi_V/Phi_V_cal)
 
-  write(*,*) 'Phi_V = ', Phi_V, ' W m^-2'
-  write(*,*) 'V0 = ', V0, ' mag'
-
   call cpu_time(t2)
   write(*,*) 'k = ', k, ' cpu_time = ', t2-t1, ' s'
+
+  write(*,*) 'Phi_V = ', Phi_V, ' W m^-2'
+  write(*,*) 'V0 = ', V0, ' mag'
 
   open(unit=20, file='lc.dat', access='append')
   write(20,*) k, V0
