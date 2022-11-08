@@ -28,6 +28,7 @@ surf = 0.d0
 
 !$omp parallel do reduction(+:S) private(i,j,k,tmp,a,b,c) shared(polys,surf)
 do i = 1, size(polys,1)
+  surf(i) = 0.d0
   do j = 1, polys(i)%c
     tmp = 0.d0
     l = polys(i)%s(j)%c
@@ -37,9 +38,9 @@ do i = 1, size(polys,1)
       c = polys(i)%s(j)%p(k+1,:)
       tmp = tmp + vector_product(b-a,c-a)
     enddo
-    surf(i) = 0.5d0*sqrt(dot_product(tmp,tmp))
-    S = S + surf(i)
+    surf(i) = surf(i) + 0.5d0*sqrt(dot_product(tmp,tmp))
   enddo
+  S = S + surf(i)
 enddo
 !$omp end parallel do
 
