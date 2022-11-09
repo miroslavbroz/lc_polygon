@@ -1,10 +1,13 @@
 
 Test of lightcurve computation for a general polygonal mesh.
+============================================================
 
 The following physics was already implemented:
 
 - insolation
 - shadowing (non-convex), eclipses, transits, ...
+- clipping of polygons (u. Clipper2)
+- precision <0.0001 mag
 - Lambert law
 - Lommel law
 - Hapke law
