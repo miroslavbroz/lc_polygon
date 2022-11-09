@@ -3,14 +3,11 @@
 // Miroslav Broz (miroslav.broz@email.cz), Nov 5th 2022
 
 #include <cstdlib>
-#include "clipper.h"
+#include "../clipper2/clipper.h"
 
 using namespace Clipper2Lib;
 
-// cf. polytype.f90!
-
-#define MAXPOLY		64
-#define MAXPOLYS	64
+#include "clip_in_c.h"
 
 #define DECIMAL_PRECISION	8
 

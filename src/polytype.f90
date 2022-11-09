@@ -17,14 +17,11 @@
 ! polys1(1)%s(1)%p(1,:) .. 1st node in a polygon
 ! polys1(1)%s(1)%p(1,1) .. 1st node, x-coordinate
 
-! cf. clip_in.c.cpp! 
-
 module polytype_module
 
 use iso_c_binding
 
-integer, parameter :: MAXPOLY  = 64
-integer, parameter :: MAXPOLYS = 64
+include 'polytype.inc'
 
 type, bind(c) :: polytype
   integer(c_int) :: c = 0

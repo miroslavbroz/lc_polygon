@@ -1,1 +1,0 @@
-../plt/output.poly1.01.plt

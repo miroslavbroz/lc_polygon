@@ -10,7 +10,7 @@ set cbl "I_{lambda} [W m^{-2} sr^{-1} m^{-1}]" offset 3,0
 
 set cbr [0:]
 
-set view 90,0,1.0
+set view 90,0,0.5
 set view equal xyz
 set xyplane 0.0
 set palette gray

@@ -35,23 +35,26 @@ obj = \
 
 objc = \
   src/clip_in_c.o \
-  src/clipper.engine.o \
+  clipper2/clipper.engine.o \
 
 inc = \
+  src/polytype.inc \
   src/integrate_over_S.inc \
+  src/c1.inc \
+  src/clip_in_c.h \
 
 lib = -lstdc++
 
 src/lc_polygon: src/lc_polygon.f90 $(obj) $(objc) $(inc)
 	$(f90) $(opt) $(obj) $(objc) -o $@ $< $(lib)
 
-$(obj): %.o:%.f90
+$(obj): %.o:%.f90 $(inc)
 	$(f90) $(opt) -o $@ -c $<
 
-$(objc): %.o:%.cpp
+$(objc): %.o:%.cpp $(inc)
 	$(cc) $(opt) -o $@ -c $<
 
 clean:
-	rm src/*.mod
+	rm -f src/*.mod
 	rm $(obj)
 
