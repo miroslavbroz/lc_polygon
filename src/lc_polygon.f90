@@ -77,8 +77,9 @@ use clip_module
 use to_three_module
 use surface_module
 use planck_module
-use shadowing_module
 use hapke_module
+use shadowing_module
+use gnuplot_module
 
 implicit none
 
@@ -93,7 +94,6 @@ double precision, dimension(:), pointer :: I_lambda
 
 integer :: i, j, k
 double precision, dimension(3) :: r
-double precision, dimension(3) :: o_, o__, s_, s__
 double precision :: capR, capS, capV
 double precision :: A_hL, A_gL, A_BL
 double precision :: alpha, omega
@@ -303,6 +303,7 @@ do k = 1, nsteps
   ! debugging
   if (debug) then
     if ((k.eq.1).or.(k.eq.49).or.(k.eq.50)) then
+
       write(str,'(i0.2)') k
       call write_node("output.node." // trim(str), nodes)
       call write_face("output.face." // trim(str), faces)
@@ -321,29 +322,12 @@ do k = 1, nsteps
       call write1("output.surf." // trim(str), surf)
       call write1("output.I_lambda." // trim(str), I_lambda)
     endif
+  endif
 
-    ! gnuplotting
+  ! gnuplotting
+  if (debug) then
     if (k.eq.1) then
-      open(unit=10, file='output.gnu', status='unknown')
-      write(10,*) 's1 = ', s(1)
-      write(10,*) 's2 = ', s(2)
-      write(10,*) 's3 = ', s(3)
-      write(10,*) 'o1 = ', o(1)
-      write(10,*) 'o2 = ', o(2)
-      write(10,*) 'o3 = ', o(3)
-      write(10,*) 's1_ = ', s_(1)
-      write(10,*) 's2_ = ', s_(2)
-      write(10,*) 's3_ = ', s_(3)
-      write(10,*) 'o1_ = ', o_(1)
-      write(10,*) 'o2_ = ', o_(2)
-      write(10,*) 'o3_ = ', o_(3)
-      write(10,*) 's1__ = ', s__(1)
-      write(10,*) 's2__ = ', s__(2)
-      write(10,*) 's3__ = ', s__(3)
-      write(10,*) 'o1__ = ', o__(1)
-      write(10,*) 'o2__ = ', o__(2)
-      write(10,*) 'o3__ = ', o__(3)
-      close(10)
+      call gnuplot()
     endif
   endif
 

@@ -40,6 +40,7 @@ logical :: debug = .true.
 
 ! common
 double precision :: Phi_lambda, Phi_lambda_cal, Phi_V_cal, f_L
+double precision, dimension(3) :: o_, o__, s_, s__
 
 namelist /input/ &
   f_node1, f_node2, f_face1, f_face2, &

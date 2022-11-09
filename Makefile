@@ -32,6 +32,7 @@ obj = \
   src/surface.o \
   src/planck.o \
   src/shadowing.o \
+  src/gnuplot.o \
 
 objc = \
   src/clip_in_c.o \
