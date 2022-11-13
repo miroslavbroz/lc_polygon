@@ -46,6 +46,8 @@ endif
 return
 end function f_hapke
 
+! Note: in Broz & Solc (2013), a bracket in H(mu) is missing!
+
 double precision function H(mu)
 
 use input_module, only : A_w
@@ -53,7 +55,7 @@ use input_module, only : A_w
 implicit none
 double precision, intent(in) :: mu
 
-H = 1.d0 - A_w*mu*(r0 + (1.d0-2.d0*r0*mu)/2.d0 * log((1.d0+mu)/mu))**(-1.d0)  ! Eq. (2.17)
+H = (1.d0 - A_w*mu*(r0 + (1.d0-2.d0*r0*mu)/2.d0 * log((1.d0+mu)/mu)))**(-1.d0)  ! Eq. (2.17)
 
 return
 end function H
